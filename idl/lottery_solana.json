@@ -1,0 +1,1090 @@
+{
+  "address": "2wqFWNXDYT2Q71ToNFBqKpV4scKSi1cjMuqVcT2jgruV",
+  "metadata": {
+    "name": "lottery_solana",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "contribute_to_jackpot",
+      "discriminator": [
+        228,
+        245,
+        76,
+        190,
+        25,
+        15,
+        86,
+        39
+      ],
+      "accounts": [
+        {
+          "name": "lottery_state",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  108,
+                  111,
+                  116,
+                  116,
+                  101,
+                  114,
+                  121,
+                  95,
+                  115,
+                  116,
+                  97,
+                  116,
+                  101
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "contributor",
+          "signer": true
+        }
+      ],
+      "args": [
+        {
+          "name": "sol_amount",
+          "type": "u64"
+        },
+        {
+          "name": "transaction_signature",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "create_lottery",
+      "discriminator": [
+        242,
+        165,
+        247,
+        119,
+        17,
+        203,
+        21,
+        42
+      ],
+      "accounts": [
+        {
+          "name": "lottery",
+          "writable": true
+        },
+        {
+          "name": "lottery_state",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  108,
+                  111,
+                  116,
+                  116,
+                  101,
+                  114,
+                  121,
+                  95,
+                  115,
+                  116,
+                  97,
+                  116,
+                  101
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "lottery_type",
+          "type": {
+            "defined": {
+              "name": "LotteryType"
+            }
+          }
+        },
+        {
+          "name": "scheduled_time",
+          "type": "i64"
+        }
+      ]
+    },
+    {
+      "name": "execute_lottery",
+      "discriminator": [
+        42,
+        125,
+        31,
+        167,
+        80,
+        142,
+        218,
+        215
+      ],
+      "accounts": [
+        {
+          "name": "lottery",
+          "writable": true
+        },
+        {
+          "name": "lottery_state",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  108,
+                  111,
+                  116,
+                  116,
+                  101,
+                  114,
+                  121,
+                  95,
+                  115,
+                  116,
+                  97,
+                  116,
+                  101
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "_lottery_type",
+          "type": {
+            "defined": {
+              "name": "LotteryType"
+            }
+          }
+        },
+        {
+          "name": "_draw_id",
+          "type": "u32"
+        },
+        {
+          "name": "winner_wallet",
+          "type": "pubkey"
+        },
+        {
+          "name": "vrf_seed",
+          "type": "u64"
+        },
+        {
+          "name": "transaction_signature",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "get_lottery_state",
+      "discriminator": [
+        17,
+        55,
+        47,
+        174,
+        239,
+        211,
+        158,
+        69
+      ],
+      "accounts": [
+        {
+          "name": "lottery_state",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  108,
+                  111,
+                  116,
+                  116,
+                  101,
+                  114,
+                  121,
+                  95,
+                  115,
+                  116,
+                  97,
+                  116,
+                  101
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "initialize",
+      "discriminator": [
+        175,
+        175,
+        109,
+        31,
+        13,
+        152,
+        155,
+        237
+      ],
+      "accounts": [
+        {
+          "name": "lottery_state",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  108,
+                  111,
+                  116,
+                  116,
+                  101,
+                  114,
+                  121,
+                  95,
+                  115,
+                  116,
+                  97,
+                  116,
+                  101
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "ball_token_mint",
+          "type": "pubkey"
+        }
+      ]
+    },
+    {
+      "name": "pay_winner",
+      "discriminator": [
+        95,
+        54,
+        215,
+        39,
+        87,
+        139,
+        215,
+        225
+      ],
+      "accounts": [
+        {
+          "name": "lottery",
+          "writable": true
+        },
+        {
+          "name": "lottery_state",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  108,
+                  111,
+                  116,
+                  116,
+                  101,
+                  114,
+                  121,
+                  95,
+                  115,
+                  116,
+                  97,
+                  116,
+                  101
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "winner",
+          "writable": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "_lottery_type",
+          "type": {
+            "defined": {
+              "name": "LotteryType"
+            }
+          }
+        },
+        {
+          "name": "_draw_id",
+          "type": "u32"
+        }
+      ]
+    },
+    {
+      "name": "toggle_pause",
+      "discriminator": [
+        238,
+        237,
+        206,
+        27,
+        255,
+        95,
+        123,
+        229
+      ],
+      "accounts": [
+        {
+          "name": "lottery_state",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  108,
+                  111,
+                  116,
+                  116,
+                  101,
+                  114,
+                  121,
+                  95,
+                  115,
+                  116,
+                  97,
+                  116,
+                  101
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "admin",
+          "signer": true,
+          "relations": [
+            "lottery_state"
+          ]
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "update_config",
+      "discriminator": [
+        29,
+        158,
+        252,
+        191,
+        10,
+        83,
+        219,
+        99
+      ],
+      "accounts": [
+        {
+          "name": "lottery_state",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  108,
+                  111,
+                  116,
+                  116,
+                  101,
+                  114,
+                  121,
+                  95,
+                  115,
+                  116,
+                  97,
+                  116,
+                  101
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "admin",
+          "signer": true,
+          "relations": [
+            "lottery_state"
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "min_ticket_requirement",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "update_participant",
+      "discriminator": [
+        21,
+        180,
+        156,
+        111,
+        222,
+        176,
+        127,
+        243
+      ],
+      "accounts": [
+        {
+          "name": "participant",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  97,
+                  114,
+                  116,
+                  105,
+                  99,
+                  105,
+                  112,
+                  97,
+                  110,
+                  116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "user"
+              }
+            ]
+          }
+        },
+        {
+          "name": "lottery_state",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  108,
+                  111,
+                  116,
+                  116,
+                  101,
+                  114,
+                  121,
+                  95,
+                  115,
+                  116,
+                  97,
+                  116,
+                  101
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "ball_balance",
+          "type": "u64"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Lottery",
+      "discriminator": [
+        162,
+        182,
+        26,
+        12,
+        164,
+        214,
+        112,
+        3
+      ]
+    },
+    {
+      "name": "LotteryState",
+      "discriminator": [
+        196,
+        210,
+        202,
+        219,
+        204,
+        63,
+        133,
+        85
+      ]
+    },
+    {
+      "name": "Participant",
+      "discriminator": [
+        32,
+        142,
+        108,
+        79,
+        247,
+        179,
+        54,
+        6
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "JackpotContribution",
+      "discriminator": [
+        138,
+        20,
+        206,
+        172,
+        245,
+        61,
+        81,
+        230
+      ]
+    },
+    {
+      "name": "LotteryCreated",
+      "discriminator": [
+        162,
+        18,
+        70,
+        148,
+        241,
+        124,
+        57,
+        74
+      ]
+    },
+    {
+      "name": "LotteryExecuted",
+      "discriminator": [
+        89,
+        69,
+        67,
+        3,
+        152,
+        10,
+        71,
+        28
+      ]
+    },
+    {
+      "name": "ParticipantUpdated",
+      "discriminator": [
+        52,
+        49,
+        89,
+        74,
+        143,
+        115,
+        139,
+        49
+      ]
+    },
+    {
+      "name": "WinnerPaid",
+      "discriminator": [
+        249,
+        7,
+        9,
+        105,
+        29,
+        200,
+        82,
+        110
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "ProgramPaused",
+      "msg": "The program is currently paused."
+    },
+    {
+      "code": 6001,
+      "name": "InvalidScheduledTime",
+      "msg": "Invalid scheduled time."
+    },
+    {
+      "code": 6002,
+      "name": "InvalidLotteryStatus",
+      "msg": "Invalid lottery status."
+    },
+    {
+      "code": 6003,
+      "name": "NoParticipants",
+      "msg": "No participants."
+    },
+    {
+      "code": 6004,
+      "name": "InsufficientJackpot",
+      "msg": "Insufficient jackpot."
+    },
+    {
+      "code": 6005,
+      "name": "InvalidWinner",
+      "msg": "Invalid winner."
+    },
+    {
+      "code": 6006,
+      "name": "TooEarly",
+      "msg": "Too early to execute the lottery."
+    }
+  ],
+  "types": [
+    {
+      "name": "JackpotContribution",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "contributor",
+            "type": "pubkey"
+          },
+          {
+            "name": "sol_amount",
+            "type": "u64"
+          },
+          {
+            "name": "hourly_contribution",
+            "type": "u64"
+          },
+          {
+            "name": "daily_contribution",
+            "type": "u64"
+          },
+          {
+            "name": "transaction_signature",
+            "type": "string"
+          },
+          {
+            "name": "timestamp",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Lottery",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "draw_id",
+            "type": "u32"
+          },
+          {
+            "name": "lottery_type",
+            "type": {
+              "defined": {
+                "name": "LotteryType"
+              }
+            }
+          },
+          {
+            "name": "scheduled_time",
+            "type": "i64"
+          },
+          {
+            "name": "executed_time",
+            "type": "i64"
+          },
+          {
+            "name": "status",
+            "type": {
+              "defined": {
+                "name": "LotteryStatus"
+              }
+            }
+          },
+          {
+            "name": "jackpot_amount",
+            "type": "u64"
+          },
+          {
+            "name": "total_participants",
+            "type": "u64"
+          },
+          {
+            "name": "total_tickets",
+            "type": "u64"
+          },
+          {
+            "name": "winner",
+            "type": "pubkey"
+          },
+          {
+            "name": "vrf_seed",
+            "type": "u64"
+          },
+          {
+            "name": "transaction_signature",
+            "type": "string"
+          },
+          {
+            "name": "slot_number",
+            "type": "u64"
+          },
+          {
+            "name": "payout_time",
+            "type": "i64"
+          },
+          {
+            "name": "created_at",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LotteryCreated",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "lottery_id",
+            "type": "u32"
+          },
+          {
+            "name": "lottery_type",
+            "type": {
+              "defined": {
+                "name": "LotteryType"
+              }
+            }
+          },
+          {
+            "name": "scheduled_time",
+            "type": "i64"
+          },
+          {
+            "name": "jackpot_amount",
+            "type": "u64"
+          },
+          {
+            "name": "total_participants",
+            "type": "u64"
+          },
+          {
+            "name": "total_tickets",
+            "type": "u64"
+          },
+          {
+            "name": "timestamp",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LotteryExecuted",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "lottery_id",
+            "type": "u32"
+          },
+          {
+            "name": "lottery_type",
+            "type": {
+              "defined": {
+                "name": "LotteryType"
+              }
+            }
+          },
+          {
+            "name": "winner",
+            "type": "pubkey"
+          },
+          {
+            "name": "jackpot_amount",
+            "type": "u64"
+          },
+          {
+            "name": "total_participants",
+            "type": "u64"
+          },
+          {
+            "name": "total_tickets",
+            "type": "u64"
+          },
+          {
+            "name": "vrf_seed",
+            "type": "u64"
+          },
+          {
+            "name": "transaction_signature",
+            "type": "string"
+          },
+          {
+            "name": "timestamp",
+            "type": "i64"
+          },
+          {
+            "name": "slot",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LotteryState",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "ball_token_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "hourly_jackpot_sol",
+            "type": "u64"
+          },
+          {
+            "name": "daily_jackpot_sol",
+            "type": "u64"
+          },
+          {
+            "name": "total_participants",
+            "type": "u64"
+          },
+          {
+            "name": "total_tickets",
+            "type": "u64"
+          },
+          {
+            "name": "last_hourly_draw",
+            "type": "i64"
+          },
+          {
+            "name": "last_daily_draw",
+            "type": "i64"
+          },
+          {
+            "name": "hourly_draw_count",
+            "type": "u32"
+          },
+          {
+            "name": "daily_draw_count",
+            "type": "u32"
+          },
+          {
+            "name": "min_ticket_requirement",
+            "type": "u64"
+          },
+          {
+            "name": "is_paused",
+            "type": "bool"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LotteryStatus",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Pending"
+          },
+          {
+            "name": "Processing"
+          },
+          {
+            "name": "Completed"
+          },
+          {
+            "name": "Cancelled"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LotteryType",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Hourly"
+          },
+          {
+            "name": "Daily"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Participant",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "wallet",
+            "type": "pubkey"
+          },
+          {
+            "name": "ball_balance",
+            "type": "u64"
+          },
+          {
+            "name": "tickets_count",
+            "type": "u64"
+          },
+          {
+            "name": "is_eligible",
+            "type": "bool"
+          },
+          {
+            "name": "last_updated",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ParticipantUpdated",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "wallet",
+            "type": "pubkey"
+          },
+          {
+            "name": "ball_balance",
+            "type": "u64"
+          },
+          {
+            "name": "tickets_count",
+            "type": "u64"
+          },
+          {
+            "name": "is_eligible",
+            "type": "bool"
+          },
+          {
+            "name": "timestamp",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "WinnerPaid",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "lottery_id",
+            "type": "u32"
+          },
+          {
+            "name": "lottery_type",
+            "type": {
+              "defined": {
+                "name": "LotteryType"
+              }
+            }
+          },
+          {
+            "name": "winner",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          },
+          {
+            "name": "transaction_signature",
+            "type": "string"
+          },
+          {
+            "name": "timestamp",
+            "type": "i64"
+          }
+        ]
+      }
+    }
+  ]
+}

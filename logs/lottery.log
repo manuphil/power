@@ -1,0 +1,250 @@
+ERROR 2025-07-09 14:06:07,207 solana_service 34854 4549850624 Error initializing program: [Errno 2] No such file or directory: 'lottery_solana.json'
+ERROR 2025-07-09 14:16:14,373 solana_service 35606 4784002560 Error initializing program: [Errno 2] No such file or directory: 'lottery_solana.json'
+ERROR 2025-07-09 14:38:34,765 solana_service 37346 4697986560 Error initializing program: name 'Path' is not defined
+ERROR 2025-07-09 14:44:13,564 solana_service 37806 4472722944 Error initializing program: [Errno 2] No such file or directory: '/Users/mac/Music/project/pool/lottery-solana/backend/base/idl/lottery_solana.json'
+ERROR 2025-07-09 14:49:24,526 solana_service 38250 4644099584 Error initializing program: 'dict' object has no attribute 'instructions'
+ERROR 2025-07-09 14:58:42,751 solana_service 38814 4469556736 Error initializing program: 'dict' object has no attribute 'instructions'
+ERROR 2025-07-09 15:29:17,453 solana_service 41215 4511102464 Error initializing program: argument 'raw': 'dict' object cannot be converted to 'PyString'
+ERROR 2025-07-09 15:37:01,483 solana_service 41899 4467893760 Error initializing program: data did not match any variant of untagged enum IdlAccountItem at line 52 column 10
+ERROR 2025-07-09 16:01:31,746 solana_service 43495 4663318016 Error initializing program: data did not match any variant of untagged enum IdlAccountItem at line 52 column 8
+ERROR 2025-07-09 16:13:46,615 solana_service 44276 4534998528 Error initializing program: data did not match any variant of untagged enum IdlAccountItem at line 52 column 8
+ERROR 2025-07-10 00:11:10,113 solana_service 33924 4455765504 Error initializing program: data did not match any variant of untagged enum IdlAccountItem at line 52 column 8
+INFO 2025-07-10 00:57:58,536 autoreload 36626 4753896960 Watching for file changes with StatReloader
+INFO 2025-07-10 00:58:32,364 autoreload 36626 4753896960 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 00:58:34,385 autoreload 36673 4588836352 Watching for file changes with StatReloader
+INFO 2025-07-10 00:59:06,232 autoreload 36673 4588836352 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 00:59:09,193 autoreload 36727 4405343744 Watching for file changes with StatReloader
+INFO 2025-07-10 00:59:20,600 autoreload 36727 4405343744 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 00:59:21,446 autoreload 36748 4650284544 Watching for file changes with StatReloader
+INFO 2025-07-10 00:59:54,902 autoreload 36748 4650284544 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 00:59:57,140 autoreload 36783 4665292288 Watching for file changes with StatReloader
+INFO 2025-07-10 01:00:12,470 autoreload 36783 4665292288 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 01:00:15,877 autoreload 36805 4515907072 Watching for file changes with StatReloader
+INFO 2025-07-10 01:00:27,333 autoreload 36805 4515907072 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 01:00:28,286 autoreload 36837 4487255552 Watching for file changes with StatReloader
+INFO 2025-07-10 01:00:32,978 autoreload 36837 4487255552 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 01:00:33,731 autoreload 36851 4735407616 Watching for file changes with StatReloader
+INFO 2025-07-10 01:00:34,178 solana_service 36851 4735407616 IDL loaded successfully from /Users/mac/Music/project/pool/lottery-solana/backend/idl/lottery_solana.json
+INFO 2025-07-10 01:01:11,736 solana_service 36891 4699239936 IDL loaded successfully from /Users/mac/Music/project/pool/lottery-solana/backend/idl/lottery_solana.json
+INFO 2025-07-10 01:32:47,638 solana_service 38616 4474570240 IDL loaded successfully from /Users/mac/Music/project/pool/lottery-solana/backend/idl/lottery_solana.json
+INFO 2025-07-10 01:34:27,061 solana_service 38793 4529862144 IDL loaded successfully from /Users/mac/Music/project/pool/lottery-solana/backend/idl/lottery_solana.json
+INFO 2025-07-10 01:54:59,245 solana_service 40088 4590659072 IDL loaded successfully from /Users/mac/Music/project/pool/lottery-solana/backend/idl/lottery_solana.json
+INFO 2025-07-10 01:54:59,250 solana_service 40088 4590659072 IDL loaded successfully from /Users/mac/Music/project/pool/lottery-solana/backend/idl/lottery_solana.json
+INFO 2025-07-10 02:16:08,036 solana_service 41614 4445926912 IDL loaded successfully from /Users/mac/Music/project/pool/lottery-solana/backend/idl/lottery_solana.json
+INFO 2025-07-10 02:16:08,084 solana_service 41614 4445926912 IDL loaded successfully from /Users/mac/Music/project/pool/lottery-solana/backend/idl/lottery_solana.json
+INFO 2025-07-10 02:29:04,481 solana_service 42376 4528133632 IDL loaded successfully from /Users/mac/Music/project/pool/lottery-solana/backend/idl/lottery_solana.json
+INFO 2025-07-10 02:29:04,547 solana_service 42376 4528133632 IDL loaded successfully from /Users/mac/Music/project/pool/lottery-solana/backend/idl/lottery_solana.json
+INFO 2025-07-10 02:29:04,610 solana_service 42376 4528133632 IDL loaded successfully from /Users/mac/Music/project/pool/lottery-solana/backend/idl/lottery_solana.json
+ERROR 2025-07-10 02:29:04,898 solana_service 42376 4528133632 Solana connection check failed: 'AsyncClient' object has no attribute 'get_health'
+ERROR 2025-07-10 02:29:04,899 solana_service 42376 4528133632 Error in health check: cannot access local variable 'state' where it is not associated with a value
+INFO 2025-07-10 02:29:06,582 solana_service 42376 4528133632 Manual decoding successful
+INFO 2025-07-10 03:24:36,871 autoreload 36851 4735407616 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:24:41,256 autoreload 44972 4437390848 Watching for file changes with StatReloader
+INFO 2025-07-10 03:27:40,644 autoreload 44972 4437390848 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:27:43,554 autoreload 45136 4499871232 Watching for file changes with StatReloader
+INFO 2025-07-10 03:31:00,844 autoreload 45136 4499871232 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:31:03,595 autoreload 45302 4561765888 Watching for file changes with StatReloader
+INFO 2025-07-10 03:36:13,495 autoreload 45302 4561765888 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:36:15,509 autoreload 45489 4439168512 Watching for file changes with StatReloader
+INFO 2025-07-10 03:36:17,910 autoreload 45489 4439168512 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:36:19,330 autoreload 45500 4696049152 Watching for file changes with StatReloader
+INFO 2025-07-10 03:36:46,844 autoreload 45500 4696049152 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:36:49,808 autoreload 45518 4457801216 Watching for file changes with StatReloader
+INFO 2025-07-10 03:38:16,397 autoreload 45518 4457801216 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:38:18,679 autoreload 45566 4682081792 Watching for file changes with StatReloader
+INFO 2025-07-10 03:38:54,838 autoreload 45566 4682081792 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:38:57,409 autoreload 45611 4507895296 Watching for file changes with StatReloader
+INFO 2025-07-10 03:40:28,746 autoreload 45611 4507895296 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:40:31,554 autoreload 45676 4580926976 Watching for file changes with StatReloader
+INFO 2025-07-10 03:40:53,021 autoreload 45676 4580926976 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:40:55,187 autoreload 45697 4409570816 Watching for file changes with StatReloader
+INFO 2025-07-10 03:42:46,621 autoreload 45697 4409570816 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:42:48,965 autoreload 45761 4663662080 Watching for file changes with StatReloader
+INFO 2025-07-10 03:42:53,380 autoreload 45761 4663662080 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:42:54,052 autoreload 45785 4666934784 Watching for file changes with StatReloader
+INFO 2025-07-10 03:43:07,360 autoreload 45785 4666934784 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:43:09,231 autoreload 45801 4654421504 Watching for file changes with StatReloader
+INFO 2025-07-10 03:44:57,609 autoreload 45881 4502758912 Watching for file changes with StatReloader
+INFO 2025-07-10 03:48:18,216 autoreload 45881 4502758912 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:48:21,146 autoreload 46020 4664804864 Watching for file changes with StatReloader
+INFO 2025-07-10 03:52:14,544 autoreload 46020 4664804864 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:52:18,335 autoreload 46178 4682970624 Watching for file changes with StatReloader
+INFO 2025-07-10 03:52:27,489 autoreload 46178 4682970624 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:52:29,529 autoreload 46198 4431853056 Watching for file changes with StatReloader
+INFO 2025-07-10 03:52:33,158 autoreload 46198 4431853056 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:52:35,607 autoreload 46208 4666140160 Watching for file changes with StatReloader
+INFO 2025-07-10 03:52:37,565 autoreload 46208 4666140160 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:52:39,965 autoreload 46216 4617225728 Watching for file changes with StatReloader
+INFO 2025-07-10 03:52:50,640 autoreload 46216 4617225728 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:52:52,235 autoreload 46240 4608853504 Watching for file changes with StatReloader
+INFO 2025-07-10 03:53:18,052 autoreload 46240 4608853504 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:53:20,325 autoreload 46262 4512146944 Watching for file changes with StatReloader
+INFO 2025-07-10 03:56:02,607 autoreload 46262 4512146944 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:56:04,998 autoreload 46354 4751791616 Watching for file changes with StatReloader
+INFO 2025-07-10 03:56:20,805 autoreload 46354 4751791616 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:56:22,844 autoreload 46372 4380911104 Watching for file changes with StatReloader
+INFO 2025-07-10 03:57:20,524 autoreload 46372 4380911104 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:57:22,588 autoreload 46429 4541879808 Watching for file changes with StatReloader
+INFO 2025-07-10 03:58:00,067 autoreload 46429 4541879808 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:58:02,100 autoreload 46455 4470412800 Watching for file changes with StatReloader
+INFO 2025-07-10 03:58:05,997 autoreload 46455 4470412800 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:58:06,811 autoreload 46468 4632569344 Watching for file changes with StatReloader
+INFO 2025-07-10 03:58:14,540 autoreload 46468 4632569344 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:58:15,237 autoreload 46482 4392850944 Watching for file changes with StatReloader
+INFO 2025-07-10 03:58:17,681 autoreload 46482 4392850944 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:58:18,527 autoreload 46492 4626306560 Watching for file changes with StatReloader
+INFO 2025-07-10 03:58:21,086 autoreload 46492 4626306560 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:58:22,050 autoreload 46502 4507284992 Watching for file changes with StatReloader
+INFO 2025-07-10 03:58:24,173 autoreload 46502 4507284992 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:58:25,040 autoreload 46506 4384265728 Watching for file changes with StatReloader
+INFO 2025-07-10 03:58:27,412 autoreload 46506 4384265728 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:58:29,088 autoreload 46519 4609336832 Watching for file changes with StatReloader
+INFO 2025-07-10 03:58:32,074 autoreload 46519 4609336832 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:58:33,631 autoreload 46527 4571612672 Watching for file changes with StatReloader
+INFO 2025-07-10 03:58:35,388 autoreload 46527 4571612672 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:58:36,109 autoreload 46535 4601587200 Watching for file changes with StatReloader
+INFO 2025-07-10 03:58:50,674 autoreload 46535 4601587200 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:58:52,994 autoreload 46548 4698490368 Watching for file changes with StatReloader
+INFO 2025-07-10 03:59:39,414 autoreload 46548 4698490368 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 03:59:42,002 autoreload 46591 4669351424 Watching for file changes with StatReloader
+INFO 2025-07-10 04:00:14,703 autoreload 46591 4669351424 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:00:16,553 autoreload 46642 4577789440 Watching for file changes with StatReloader
+INFO 2025-07-10 04:00:26,880 autoreload 46642 4577789440 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:00:28,926 autoreload 46670 4731856384 Watching for file changes with StatReloader
+INFO 2025-07-10 04:00:30,502 autoreload 46670 4731856384 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:00:31,456 autoreload 46679 4627129856 Watching for file changes with StatReloader
+INFO 2025-07-10 04:01:09,606 autoreload 46679 4627129856 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:01:10,594 autoreload 46698 4442056192 Watching for file changes with StatReloader
+INFO 2025-07-10 04:01:20,944 autoreload 46698 4442056192 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:01:21,615 autoreload 46717 4381062656 Watching for file changes with StatReloader
+INFO 2025-07-10 04:05:34,451 autoreload 46717 4381062656 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:05:36,404 autoreload 46865 4403676672 Watching for file changes with StatReloader
+INFO 2025-07-10 04:10:08,557 autoreload 46865 4403676672 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:10:10,828 autoreload 46996 4577961472 Watching for file changes with StatReloader
+INFO 2025-07-10 04:10:50,567 autoreload 46996 4577961472 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:10:52,868 autoreload 47029 4386194944 Watching for file changes with StatReloader
+INFO 2025-07-10 04:11:06,440 autoreload 47029 4386194944 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:11:09,123 autoreload 47049 4572284416 Watching for file changes with StatReloader
+INFO 2025-07-10 04:11:31,846 autoreload 47049 4572284416 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:11:33,961 autoreload 47076 4626855424 Watching for file changes with StatReloader
+INFO 2025-07-10 04:11:37,970 autoreload 47076 4626855424 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:11:39,143 autoreload 47089 4641150464 Watching for file changes with StatReloader
+INFO 2025-07-10 04:11:40,651 autoreload 47089 4641150464 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:11:41,310 autoreload 47096 4789179904 Watching for file changes with StatReloader
+INFO 2025-07-10 04:11:59,438 autoreload 47096 4789179904 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:12:00,062 autoreload 47114 4781209088 Watching for file changes with StatReloader
+INFO 2025-07-10 04:13:55,919 autoreload 47114 4781209088 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:13:59,232 autoreload 47178 4359493120 Watching for file changes with StatReloader
+INFO 2025-07-10 04:14:23,012 autoreload 47178 4359493120 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:14:26,277 autoreload 47206 4476605952 Watching for file changes with StatReloader
+INFO 2025-07-10 04:16:02,888 autoreload 47206 4476605952 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:16:05,543 autoreload 47307 4712302080 Watching for file changes with StatReloader
+INFO 2025-07-10 04:16:27,236 autoreload 47307 4712302080 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:16:28,155 autoreload 47327 4507457024 Watching for file changes with StatReloader
+INFO 2025-07-10 04:17:25,620 autoreload 47327 4507457024 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:17:27,915 autoreload 47349 4595639808 Watching for file changes with StatReloader
+INFO 2025-07-10 04:21:25,675 autoreload 47349 4595639808 /Users/mac/Music/project/pool/lottery-solana/backend/core/settings.py changed, reloading.
+INFO 2025-07-10 04:22:11,655 autoreload 47578 4737414656 Watching for file changes with StatReloader
+INFO 2025-07-10 04:22:34,868 autoreload 47578 4737414656 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:22:37,240 autoreload 47602 4506904064 Watching for file changes with StatReloader
+INFO 2025-07-10 04:22:39,649 autoreload 47602 4506904064 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:22:40,398 autoreload 47613 4532274688 Watching for file changes with StatReloader
+INFO 2025-07-10 04:22:49,085 autoreload 47613 4532274688 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:22:49,999 autoreload 47629 4366079488 Watching for file changes with StatReloader
+INFO 2025-07-10 04:22:53,909 autoreload 47629 4366079488 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:22:54,623 autoreload 47640 4678026752 Watching for file changes with StatReloader
+INFO 2025-07-10 04:22:57,096 autoreload 47640 4678026752 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:22:57,998 autoreload 47652 4525803008 Watching for file changes with StatReloader
+INFO 2025-07-10 04:23:01,650 autoreload 47652 4525803008 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:23:02,633 autoreload 47658 4800792064 Watching for file changes with StatReloader
+INFO 2025-07-10 04:23:13,617 autoreload 47658 4800792064 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:23:14,573 autoreload 47670 4436370944 Watching for file changes with StatReloader
+INFO 2025-07-10 04:23:16,109 autoreload 47670 4436370944 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:23:16,925 autoreload 47680 4441085440 Watching for file changes with StatReloader
+INFO 2025-07-10 04:23:18,564 autoreload 47680 4441085440 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:23:19,802 autoreload 47682 4541384192 Watching for file changes with StatReloader
+INFO 2025-07-10 04:23:22,350 autoreload 47682 4541384192 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:23:23,438 autoreload 47693 4581299712 Watching for file changes with StatReloader
+INFO 2025-07-10 04:23:31,150 autoreload 47693 4581299712 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:23:32,149 autoreload 47710 4639704576 Watching for file changes with StatReloader
+INFO 2025-07-10 04:23:34,622 autoreload 47710 4639704576 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:23:35,274 autoreload 47720 4367369728 Watching for file changes with StatReloader
+INFO 2025-07-10 04:23:42,014 autoreload 47720 4367369728 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:23:42,960 autoreload 47732 4532827648 Watching for file changes with StatReloader
+INFO 2025-07-10 04:23:45,425 autoreload 47732 4532827648 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:23:46,355 autoreload 47737 4513396224 Watching for file changes with StatReloader
+INFO 2025-07-10 04:23:48,871 autoreload 47737 4513396224 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:23:49,906 autoreload 47751 4497466880 Watching for file changes with StatReloader
+INFO 2025-07-10 04:23:51,290 autoreload 47751 4497466880 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:23:52,187 autoreload 47756 4602476032 Watching for file changes with StatReloader
+INFO 2025-07-10 04:23:53,705 autoreload 47756 4602476032 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:23:54,859 autoreload 47765 4606506496 Watching for file changes with StatReloader
+INFO 2025-07-10 04:24:01,718 autoreload 47765 4606506496 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:24:02,826 autoreload 47784 4561692160 Watching for file changes with StatReloader
+INFO 2025-07-10 04:24:05,501 autoreload 47784 4561692160 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:24:06,281 autoreload 47793 4582204928 Watching for file changes with StatReloader
+INFO 2025-07-10 04:24:06,770 solana_service 47793 4582204928 IDL loaded successfully from /Users/mac/Music/project/pool/lottery-solana/backend/idl/lottery_solana.json
+INFO 2025-07-10 04:24:33,755 autoreload 47793 4582204928 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:24:35,887 autoreload 47820 4609136128 Watching for file changes with StatReloader
+INFO 2025-07-10 04:24:39,160 autoreload 47820 4609136128 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:24:40,038 autoreload 47834 4562994688 Watching for file changes with StatReloader
+INFO 2025-07-10 04:24:42,656 autoreload 47834 4562994688 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:24:43,990 autoreload 47844 4520068608 Watching for file changes with StatReloader
+INFO 2025-07-10 04:24:45,614 autoreload 47844 4520068608 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:24:46,709 autoreload 47858 4363159040 Watching for file changes with StatReloader
+INFO 2025-07-10 04:24:50,415 autoreload 47858 4363159040 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 04:24:51,346 autoreload 47865 4571100672 Watching for file changes with StatReloader
+INFO 2025-07-10 04:25:23,462 autoreload 47865 4571100672 /Users/mac/Music/project/pool/lottery-solana/backend/base/tasks.py changed, reloading.
+INFO 2025-07-10 04:25:25,898 autoreload 47919 4659357184 Watching for file changes with StatReloader
+INFO 2025-07-10 09:11:05,419 autoreload 47919 4659357184 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 09:11:08,909 autoreload 53667 4707399168 Watching for file changes with StatReloader
+INFO 2025-07-10 09:20:30,283 autoreload 53667 4707399168 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 09:20:34,397 autoreload 53966 4667573760 Watching for file changes with StatReloader
+INFO 2025-07-10 09:21:12,223 autoreload 53966 4667573760 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 09:21:14,621 autoreload 53989 4647712256 Watching for file changes with StatReloader
+INFO 2025-07-10 09:21:40,605 autoreload 53989 4647712256 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 09:21:45,741 autoreload 54009 4478346752 Watching for file changes with StatReloader
+INFO 2025-07-10 09:22:16,750 autoreload 54009 4478346752 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 09:22:19,638 autoreload 54041 4729959936 Watching for file changes with StatReloader
+INFO 2025-07-10 09:23:19,266 autoreload 54041 4729959936 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 09:23:26,278 autoreload 54112 4602271232 Watching for file changes with StatReloader
+INFO 2025-07-10 09:23:46,491 autoreload 54112 4602271232 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 09:23:47,806 autoreload 54149 4505339392 Watching for file changes with StatReloader
+INFO 2025-07-10 09:23:55,817 autoreload 54149 4505339392 /Users/mac/Music/project/pool/lottery-solana/backend/base/solana_service.py changed, reloading.
+INFO 2025-07-10 09:23:57,587 autoreload 54167 4512065024 Watching for file changes with StatReloader
+INFO 2025-07-10 09:44:32,693 autoreload 54167 4512065024 /Users/mac/Music/project/pool/lottery-solana/backend/base/tasks.py changed, reloading.
+INFO 2025-07-10 09:44:43,598 autoreload 55067 4727629312 Watching for file changes with StatReloader
+INFO 2025-07-10 09:46:56,025 autoreload 55067 4727629312 /Users/mac/Music/project/pool/lottery-solana/backend/base/tasks.py changed, reloading.
+INFO 2025-07-10 09:47:02,152 autoreload 55162 4440548864 Watching for file changes with StatReloader
+INFO 2025-07-10 09:47:13,247 autoreload 55162 4440548864 /Users/mac/Music/project/pool/lottery-solana/backend/base/tasks.py changed, reloading.
+INFO 2025-07-10 09:47:20,249 autoreload 55184 4568475136 Watching for file changes with StatReloader
+INFO 2025-07-10 09:47:44,163 autoreload 55184 4568475136 /Users/mac/Music/project/pool/lottery-solana/backend/base/tasks.py changed, reloading.
+INFO 2025-07-10 09:47:56,488 autoreload 55214 4435850752 Watching for file changes with StatReloader
+INFO 2025-07-10 09:48:37,984 autoreload 55214 4435850752 /Users/mac/Music/project/pool/lottery-solana/backend/base/tasks.py changed, reloading.
+INFO 2025-07-10 09:48:41,755 autoreload 55244 4762527232 Watching for file changes with StatReloader
+INFO 2025-07-10 09:50:14,875 autoreload 55244 4762527232 /Users/mac/Music/project/pool/lottery-solana/backend/base/tasks.py changed, reloading.
+INFO 2025-07-10 09:50:18,332 autoreload 55315 4525606400 Watching for file changes with StatReloader
+INFO 2025-07-10 09:50:34,461 autoreload 55315 4525606400 /Users/mac/Music/project/pool/lottery-solana/backend/base/tasks.py changed, reloading.
+INFO 2025-07-10 09:50:36,213 autoreload 55344 4433917440 Watching for file changes with StatReloader
+INFO 2025-07-10 09:50:45,511 autoreload 55344 4433917440 /Users/mac/Music/project/pool/lottery-solana/backend/base/tasks.py changed, reloading.
+INFO 2025-07-10 09:50:52,816 autoreload 55368 4572964352 Watching for file changes with StatReloader
+INFO 2025-07-10 09:54:54,469 autoreload 55368 4572964352 /Users/mac/Music/project/pool/lottery-solana/backend/base/tasks.py changed, reloading.
+INFO 2025-07-10 09:54:56,644 autoreload 55485 4569310720 Watching for file changes with StatReloader
+INFO 2025-07-10 09:54:58,580 tasks 55485 4569310720 PRODUCTION: Lottery tasks module loaded successfully
+INFO 2025-07-10 09:55:22,944 autoreload 55485 4569310720 /Users/mac/Music/project/pool/lottery-solana/backend/base/tasks.py changed, reloading.
+INFO 2025-07-10 09:55:25,423 autoreload 55515 4741895680 Watching for file changes with StatReloader
+INFO 2025-07-10 09:55:26,537 tasks 55515 4741895680 PRODUCTION: Lottery tasks module loaded successfully
+INFO 2025-07-10 09:55:38,159 autoreload 55515 4741895680 /Users/mac/Music/project/pool/lottery-solana/backend/base/tasks.py changed, reloading.
+INFO 2025-07-10 09:55:39,003 autoreload 55548 4578555392 Watching for file changes with StatReloader
+INFO 2025-07-10 09:55:39,877 tasks 55548 4578555392 PRODUCTION: Lottery tasks module loaded successfully
+INFO 2025-07-10 09:55:43,562 autoreload 55548 4578555392 /Users/mac/Music/project/pool/lottery-solana/backend/base/tasks.py changed, reloading.
+INFO 2025-07-10 09:55:45,532 autoreload 55559 4643059200 Watching for file changes with StatReloader
+INFO 2025-07-10 09:55:46,854 tasks 55559 4643059200 PRODUCTION: Lottery tasks module loaded successfully
+INFO 2025-07-10 09:55:57,496 autoreload 55559 4643059200 /Users/mac/Music/project/pool/lottery-solana/backend/base/tasks.py changed, reloading.
+INFO 2025-07-10 09:55:58,661 autoreload 55598 4655162880 Watching for file changes with StatReloader
+INFO 2025-07-10 09:55:59,743 tasks 55598 4655162880 PRODUCTION: Lottery tasks module loaded successfully
+INFO 2025-07-10 09:56:22,926 autoreload 55598 4655162880 /Users/mac/Music/project/pool/lottery-solana/backend/core/settings.py changed, reloading.
+INFO 2025-07-10 09:56:24,675 autoreload 55628 4617496064 Watching for file changes with StatReloader
+INFO 2025-07-10 09:56:25,912 tasks 55628 4617496064 PRODUCTION: Lottery tasks module loaded successfully
+INFO 2025-07-10 09:56:45,168 autoreload 55628 4617496064 /Users/mac/Music/project/pool/lottery-solana/backend/base/tasks.py changed, reloading.
+INFO 2025-07-10 09:56:46,384 autoreload 55661 4808386048 Watching for file changes with StatReloader

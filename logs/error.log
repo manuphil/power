@@ -1,0 +1,13 @@
+[2025-07-09 14:06:07] ERROR base.solana_service solana_service.get_program:70 - Error initializing program: [Errno 2] No such file or directory: 'lottery_solana.json'
+[2025-07-09 14:16:14] ERROR base.solana_service solana_service.get_program:70 - Error initializing program: [Errno 2] No such file or directory: 'lottery_solana.json'
+[2025-07-09 14:38:34] ERROR base.solana_service solana_service.get_program:67 - Error initializing program: name 'Path' is not defined
+[2025-07-09 14:44:13] ERROR base.solana_service solana_service.get_program:69 - Error initializing program: [Errno 2] No such file or directory: '/Users/mac/Music/project/pool/lottery-solana/backend/base/idl/lottery_solana.json'
+[2025-07-09 14:49:24] ERROR base.solana_service solana_service.get_program:70 - Error initializing program: 'dict' object has no attribute 'instructions'
+[2025-07-09 14:58:42] ERROR base.solana_service solana_service.get_program:69 - Error initializing program: 'dict' object has no attribute 'instructions'
+[2025-07-09 15:29:17] ERROR base.solana_service solana_service.get_program:71 - Error initializing program: argument 'raw': 'dict' object cannot be converted to 'PyString'
+[2025-07-09 15:37:01] ERROR base.solana_service solana_service.get_program:71 - Error initializing program: data did not match any variant of untagged enum IdlAccountItem at line 52 column 10
+[2025-07-09 16:01:31] ERROR base.solana_service solana_service.get_program:71 - Error initializing program: data did not match any variant of untagged enum IdlAccountItem at line 52 column 8
+[2025-07-09 16:13:46] ERROR base.solana_service solana_service.get_program:71 - Error initializing program: data did not match any variant of untagged enum IdlAccountItem at line 52 column 8
+[2025-07-10 00:11:10] ERROR base.solana_service solana_service.get_program:71 - Error initializing program: data did not match any variant of untagged enum IdlAccountItem at line 52 column 8
+[2025-07-10 02:29:04] ERROR base.solana_service solana_service.check_connection:107 - Solana connection check failed: 'AsyncClient' object has no attribute 'get_health'
+[2025-07-10 02:29:04] ERROR base.solana_service solana_service.health_check:1195 - Error in health check: cannot access local variable 'state' where it is not associated with a value
