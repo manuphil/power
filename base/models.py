@@ -24,7 +24,7 @@ class User(AbstractUser):
         verbose_name='groups',
         blank=True,
         help_text='The groups this user belongs to.',
-        related_name='custom_user_set',  # Nom unique pour éviter les conflits
+        related_name='custom_user_set',
         related_query_name='custom_user',
     )
     user_permissions = models.ManyToManyField(
@@ -32,23 +32,21 @@ class User(AbstractUser):
         verbose_name='user permissions',
         blank=True,
         help_text='Specific permissions for this user.',
-        related_name='custom_user_set',  # Nom unique pour éviter les conflits
+        related_name='custom_user_set',
         related_query_name='custom_user',
     )
     
     class Meta:
-        # Suppression de db_table pour éviter le conflit avec auth.User
         verbose_name = "Utilisateur"
         verbose_name_plural = "Utilisateurs"
 
     def __str__(self):
         return f"{self.username} ({self.wallet_address or 'No wallet'})"
-
 class TokenHolding(models.Model):
     """Détention de tokens $BALL par wallet"""
-    wallet_address = models.CharField(max_length=44, db_index=True)
+    wallet_address = models.CharField(max_length=44, db_index=True, unique=True)  # Ajout de unique=True
     balance = models.DecimalField(
-        max_digits=20, 
+        max_digits=20,
         decimal_places=8,
         validators=[MinValueValidator(Decimal('0'))]
     )
@@ -61,9 +59,9 @@ class TokenHolding(models.Model):
         default=False,
         help_text="Éligible pour le prochain tirage"
     )
-    
+
     class Meta:
-        unique_together = ['wallet_address']
+        # Suppression de unique_together car wallet_address est déjà unique
         indexes = [
             models.Index(fields=['wallet_address', 'is_eligible']),
             models.Index(fields=['tickets_count']),
@@ -79,6 +77,7 @@ class TokenHolding(models.Model):
 
     def __str__(self):
         return f"{self.wallet_address[:8]}... - {self.tickets_count} tickets"
+
 
 class LotteryType(models.TextChoices):
     """Types de loterie"""
@@ -157,7 +156,7 @@ class Lottery(models.Model):
         verbose_name_plural = "Tirages"
 
     def __str__(self):
-        return f"{self.get_lottery_type_display()} - {self.scheduled_time}"
+        return f"{self.get_lottery_type_display()} - {self.scheduled_time.strftime('%Y-%m-%d %H:%M')}"
 
     @property
     def is_active(self):
@@ -342,7 +341,6 @@ class SystemConfig(models.Model):
 
     def __str__(self):
         return f"{self.key}: {self.value[:50]}"
-
 class AuditLog(models.Model):
     """Log d'audit pour traçabilité"""
     ACTION_TYPES = [
@@ -352,27 +350,34 @@ class AuditLog(models.Model):
         ('payout_sent', 'Gain envoyé'),
         ('jackpot_updated', 'Jackpot mis à jour'),
         ('system_error', 'Erreur système'),
+        ('wallet_connected', 'Portefeuille connecté'),  # Ajout
+        ('wallet_synced', 'Portefeuille synchronisé'),  # Ajout
+        ('bulk_sync_triggered', 'Synchronisation en masse déclenchée'),  # Ajout
+        ('bulk_sync_completed', 'Synchronisation en masse terminée'),  # Ajout
+        ('system_sync_triggered', 'Synchronisation système déclenchée'),  # Ajout
+        ('config_updated', 'Configuration mise à jour'),  # Ajout
+        ('bulk_sync', 'Synchronisation en masse'),  # Ajout
     ]
     
-    action_type = models.CharField(max_length=20, choices=ACTION_TYPES)
+    action_type = models.CharField(max_length=30, choices=ACTION_TYPES)  # Augmentation de la taille
     description = models.TextField()
     user = models.ForeignKey(
-        User, 
-        on_delete=models.SET_NULL, 
-        null=True, 
+        User,
+        on_delete=models.SET_NULL,
+        null=True,
         blank=True
     )
     lottery = models.ForeignKey(
-        Lottery, 
-        on_delete=models.SET_NULL, 
-        null=True, 
+        Lottery,
+        on_delete=models.SET_NULL,
+        null=True,
         blank=True
     )
     wallet_address = models.CharField(max_length=44, null=True, blank=True)
     metadata = models.JSONField(default=dict, blank=True)
     ip_address = models.GenericIPAddressField(null=True, blank=True)
     timestamp = models.DateTimeField(auto_now_add=True)
-    
+
     class Meta:
         ordering = ['-timestamp']
         indexes = [
@@ -383,4 +388,5 @@ class AuditLog(models.Model):
         verbose_name_plural = "Logs d'Audit"
 
     def __str__(self):
-        return f"{self.get_action_type_display()} - {self.timestamp}"
+        return f"{self.get_action_type_display()} - {self.timestamp.strftime('%Y-%m-%d %H:%M:%S')}"
+

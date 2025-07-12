@@ -59,6 +59,14 @@
         {
           "name": "transaction_signature",
           "type": "string"
+        },
+        {
+          "name": "source",
+          "type": {
+            "defined": {
+              "name": "ContributionSource"
+            }
+          }
         }
       ]
     },
@@ -131,6 +139,108 @@
       ]
     },
     {
+      "name": "emergency_pause",
+      "discriminator": [
+        21,
+        143,
+        27,
+        142,
+        200,
+        181,
+        210,
+        255
+      ],
+      "accounts": [
+        {
+          "name": "lottery_state",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  108,
+                  111,
+                  116,
+                  116,
+                  101,
+                  114,
+                  121,
+                  95,
+                  115,
+                  116,
+                  97,
+                  116,
+                  101
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "admin",
+          "signer": true
+        }
+      ],
+      "args": [
+        {
+          "name": "reason",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "emergency_resume",
+      "discriminator": [
+        0,
+        243,
+        48,
+        185,
+        6,
+        73,
+        190,
+        83
+      ],
+      "accounts": [
+        {
+          "name": "lottery_state",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  108,
+                  111,
+                  116,
+                  116,
+                  101,
+                  114,
+                  121,
+                  95,
+                  115,
+                  116,
+                  97,
+                  116,
+                  101
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "admin",
+          "signer": true
+        }
+      ],
+      "args": [
+        {
+          "name": "reason",
+          "type": "string"
+        }
+      ]
+    },
+    {
       "name": "execute_lottery",
       "discriminator": [
         42,
@@ -177,6 +287,34 @@
           "name": "admin",
           "writable": true,
           "signer": true
+        },
+        {
+          "name": "winner_participant",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  97,
+                  114,
+                  116,
+                  105,
+                  99,
+                  105,
+                  112,
+                  97,
+                  110,
+                  116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "lottery.winner",
+                "account": "Lottery"
+              }
+            ]
+          }
         },
         {
           "name": "system_program",
@@ -304,6 +442,10 @@
         {
           "name": "ball_token_mint",
           "type": "pubkey"
+        },
+        {
+          "name": "admin_authority",
+          "type": "pubkey"
         }
       ]
     },
@@ -375,55 +517,6 @@
       ]
     },
     {
-      "name": "toggle_pause",
-      "discriminator": [
-        238,
-        237,
-        206,
-        27,
-        255,
-        95,
-        123,
-        229
-      ],
-      "accounts": [
-        {
-          "name": "lottery_state",
-          "writable": true,
-          "pda": {
-            "seeds": [
-              {
-                "kind": "const",
-                "value": [
-                  108,
-                  111,
-                  116,
-                  116,
-                  101,
-                  114,
-                  121,
-                  95,
-                  115,
-                  116,
-                  97,
-                  116,
-                  101
-                ]
-              }
-            ]
-          }
-        },
-        {
-          "name": "admin",
-          "signer": true,
-          "relations": [
-            "lottery_state"
-          ]
-        }
-      ],
-      "args": []
-    },
-    {
       "name": "update_config",
       "discriminator": [
         29,
@@ -464,16 +557,27 @@
         },
         {
           "name": "admin",
-          "signer": true,
-          "relations": [
-            "lottery_state"
-          ]
+          "signer": true
         }
       ],
       "args": [
         {
           "name": "min_ticket_requirement",
-          "type": "u64"
+          "type": {
+            "option": "u64"
+          }
+        },
+        {
+          "name": "max_tickets_per_wallet",
+          "type": {
+            "option": "u64"
+          }
+        },
+        {
+          "name": "fee_percentage",
+          "type": {
+            "option": "u64"
+          }
         }
       ]
     },
@@ -550,6 +654,13 @@
           "signer": true
         },
         {
+          "name": "ball_token_account"
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
           "name": "system_program",
           "address": "11111111111111111111111111111111"
         }
@@ -557,6 +668,69 @@
       "args": [
         {
           "name": "ball_balance",
+          "type": "u64"
+        },
+        {
+          "name": "_token_account_bump",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "withdraw_treasury",
+      "discriminator": [
+        40,
+        63,
+        122,
+        158,
+        144,
+        216,
+        83,
+        96
+      ],
+      "accounts": [
+        {
+          "name": "lottery_state",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  108,
+                  111,
+                  116,
+                  116,
+                  101,
+                  114,
+                  121,
+                  95,
+                  115,
+                  116,
+                  97,
+                  116,
+                  101
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "admin",
+          "signer": true
+        },
+        {
+          "name": "treasury_wallet",
+          "writable": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
           "type": "u64"
         }
       ]
@@ -604,6 +778,45 @@
     }
   ],
   "events": [
+    {
+      "name": "ConfigUpdated",
+      "discriminator": [
+        40,
+        241,
+        230,
+        122,
+        11,
+        19,
+        198,
+        194
+      ]
+    },
+    {
+      "name": "EmergencyPause",
+      "discriminator": [
+        105,
+        91,
+        187,
+        159,
+        198,
+        176,
+        189,
+        87
+      ]
+    },
+    {
+      "name": "EmergencyResume",
+      "discriminator": [
+        31,
+        112,
+        49,
+        122,
+        243,
+        247,
+        237,
+        191
+      ]
+    },
     {
       "name": "JackpotContribution",
       "discriminator": [
@@ -657,6 +870,32 @@
       ]
     },
     {
+      "name": "ProgramInitialized",
+      "discriminator": [
+        43,
+        70,
+        110,
+        241,
+        199,
+        218,
+        221,
+        245
+      ]
+    },
+    {
+      "name": "TreasuryWithdrawal",
+      "discriminator": [
+        244,
+        117,
+        175,
+        46,
+        187,
+        109,
+        20,
+        16
+      ]
+    },
+    {
       "name": "WinnerPaid",
       "discriminator": [
         249,
@@ -678,36 +917,232 @@
     },
     {
       "code": 6001,
+      "name": "EmergencyStop",
+      "msg": "Emergency stop is active."
+    },
+    {
+      "code": 6002,
       "name": "InvalidScheduledTime",
       "msg": "Invalid scheduled time."
     },
     {
-      "code": 6002,
+      "code": 6003,
       "name": "InvalidLotteryStatus",
       "msg": "Invalid lottery status."
     },
     {
-      "code": 6003,
+      "code": 6004,
       "name": "NoParticipants",
       "msg": "No participants."
     },
     {
-      "code": 6004,
+      "code": 6005,
       "name": "InsufficientJackpot",
       "msg": "Insufficient jackpot."
     },
     {
-      "code": 6005,
+      "code": 6006,
       "name": "InvalidWinner",
       "msg": "Invalid winner."
     },
     {
-      "code": 6006,
+      "code": 6007,
+      "name": "WinnerNotEligible",
+      "msg": "Winner is not eligible."
+    },
+    {
+      "code": 6008,
+      "name": "WinnerHasNoTickets",
+      "msg": "Winner has no tickets."
+    },
+    {
+      "code": 6009,
       "name": "TooEarly",
       "msg": "Too early to execute the lottery."
+    },
+    {
+      "code": 6010,
+      "name": "InvalidAmount",
+      "msg": "Invalid amount."
+    },
+    {
+      "code": 6011,
+      "name": "SignatureTooLong",
+      "msg": "Signature too long."
+    },
+    {
+      "code": 6012,
+      "name": "JackpotTooLarge",
+      "msg": "Jackpot amount too large."
+    },
+    {
+      "code": 6013,
+      "name": "InvalidTokenMint",
+      "msg": "Invalid token mint."
+    },
+    {
+      "code": 6014,
+      "name": "InvalidTokenOwner",
+      "msg": "Invalid token owner."
+    },
+    {
+      "code": 6015,
+      "name": "InsufficientTokenBalance",
+      "msg": "Insufficient token balance."
+    },
+    {
+      "code": 6016,
+      "name": "TooManyTickets",
+      "msg": "Too many tickets for this wallet."
+    },
+    {
+      "code": 6017,
+      "name": "InvalidVRFSeed",
+      "msg": "Invalid VRF seed."
+    },
+    {
+      "code": 6018,
+      "name": "InsufficientProgramBalance",
+      "msg": "Insufficient program balance."
+    },
+    {
+      "code": 6019,
+      "name": "InvalidConfig",
+      "msg": "Invalid configuration parameter."
+    },
+    {
+      "code": 6020,
+      "name": "InsufficientTreasuryBalance",
+      "msg": "Insufficient treasury balance."
+    },
+    {
+      "code": 6021,
+      "name": "Unauthorized",
+      "msg": "Unauthorized access."
+    },
+    {
+      "code": 6022,
+      "name": "AccountNotFound",
+      "msg": "Account not found."
+    },
+    {
+      "code": 6023,
+      "name": "InvalidAccountData",
+      "msg": "Invalid account data."
+    },
+    {
+      "code": 6024,
+      "name": "ArithmeticOverflow",
+      "msg": "Arithmetic overflow."
+    },
+    {
+      "code": 6025,
+      "name": "InvalidInstructionData",
+      "msg": "Invalid instruction data."
+    },
+    {
+      "code": 6026,
+      "name": "NotRentExempt",
+      "msg": "Program account not rent exempt."
+    },
+    {
+      "code": 6027,
+      "name": "InvalidProgramState",
+      "msg": "Invalid program state."
     }
   ],
   "types": [
+    {
+      "name": "ConfigUpdated",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "min_ticket_requirement",
+            "type": {
+              "option": "u64"
+            }
+          },
+          {
+            "name": "max_tickets_per_wallet",
+            "type": {
+              "option": "u64"
+            }
+          },
+          {
+            "name": "fee_percentage",
+            "type": {
+              "option": "u64"
+            }
+          },
+          {
+            "name": "timestamp",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ContributionSource",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "RaydiumSwap"
+          },
+          {
+            "name": "DirectDeposit"
+          },
+          {
+            "name": "Treasury"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EmergencyPause",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "reason",
+            "type": "string"
+          },
+          {
+            "name": "timestamp",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EmergencyResume",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "reason",
+            "type": "string"
+          },
+          {
+            "name": "timestamp",
+            "type": "i64"
+          }
+        ]
+      }
+    },
     {
       "name": "JackpotContribution",
       "type": {
@@ -728,6 +1163,18 @@
           {
             "name": "daily_contribution",
             "type": "u64"
+          },
+          {
+            "name": "fee_amount",
+            "type": "u64"
+          },
+          {
+            "name": "source",
+            "type": {
+              "defined": {
+                "name": "ContributionSource"
+              }
+            }
           },
           {
             "name": "transaction_signature",
@@ -808,6 +1255,14 @@
           {
             "name": "created_at",
             "type": "i64"
+          },
+          {
+            "name": "gas_used",
+            "type": "u64"
+          },
+          {
+            "name": "block_hash",
+            "type": "u64"
           }
         ]
       }
@@ -886,6 +1341,10 @@
             "type": "u64"
           },
           {
+            "name": "winner_tickets",
+            "type": "u64"
+          },
+          {
             "name": "vrf_seed",
             "type": "u64"
           },
@@ -954,8 +1413,40 @@
             "type": "u64"
           },
           {
+            "name": "max_tickets_per_wallet",
+            "type": "u64"
+          },
+          {
+            "name": "fee_percentage",
+            "type": "u64"
+          },
+          {
+            "name": "treasury_balance",
+            "type": "u64"
+          },
+          {
+            "name": "total_volume_processed",
+            "type": "u64"
+          },
+          {
+            "name": "initialized_at",
+            "type": "i64"
+          },
+          {
+            "name": "last_updated",
+            "type": "i64"
+          },
+          {
             "name": "is_paused",
             "type": "bool"
+          },
+          {
+            "name": "emergency_stop",
+            "type": "bool"
+          },
+          {
+            "name": "version",
+            "type": "u8"
           }
         ]
       }
@@ -976,6 +1467,9 @@
           },
           {
             "name": "Cancelled"
+          },
+          {
+            "name": "Failed"
           }
         ]
       }
@@ -1018,6 +1512,22 @@
           {
             "name": "last_updated",
             "type": "i64"
+          },
+          {
+            "name": "token_account",
+            "type": "pubkey"
+          },
+          {
+            "name": "participation_count",
+            "type": "u64"
+          },
+          {
+            "name": "total_winnings",
+            "type": "u64"
+          },
+          {
+            "name": "last_win_time",
+            "type": "i64"
           }
         ]
       }
@@ -1042,6 +1552,54 @@
           {
             "name": "is_eligible",
             "type": "bool"
+          },
+          {
+            "name": "old_tickets",
+            "type": "u64"
+          },
+          {
+            "name": "timestamp",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ProgramInitialized",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "ball_token_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "timestamp",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TreasuryWithdrawal",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "treasury_wallet",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
           },
           {
             "name": "timestamp",

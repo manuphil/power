@@ -131,7 +131,8 @@ def create_scheduled_lotteries():
                 logger.info(f"PRODUCTION: Created hourly lottery for {next_hour} with {jackpot_amount} SOL")
 
         # Créer les tirages journaliers
-        if now.hour == 11 and now.minute >= 50:
+        if now.hour == 11 and now.minute >= 45:
+
             next_day_noon = (now + timedelta(days=1)).replace(hour=12, minute=0, second=0, microsecond=0)
             
             if not Lottery.objects.filter(
@@ -1031,3 +1032,82 @@ def continuous_monitoring():
             'error': str(e)
         }
 
+
+
+@shared_task
+def bulk_sync_wallets(wallet_addresses):
+    """Synchronise une liste de wallets avec Solana"""
+    try:
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        
+        synced_count = 0
+        failed_count = 0
+        
+        for wallet_address in wallet_addresses:
+            try:
+                result = loop.run_until_complete(
+                    solana_service.sync_participant(wallet_address)
+                )
+                if result:
+                    synced_count += 1
+                else:
+                    failed_count += 1
+                    
+            except Exception as e:
+                logger.error(f"Error syncing wallet {wallet_address}: {e}")
+                failed_count += 1
+        
+        loop.close()
+        
+        # Log du résultat
+        AuditLog.objects.create(
+            action_type='bulk_sync_completed',
+            description=f'Synchronisation terminée: {synced_count} réussies, {failed_count} échouées'
+        )
+        
+        return {
+            'synced': synced_count,
+            'failed': failed_count,
+            'total': len(wallet_addresses)
+        }
+        
+    except Exception as e:
+        logger.error(f"Error in bulk sync task: {e}")
+        return {'error': str(e)}
+
+@shared_task
+def sync_lottery_state():
+    """Synchronise l'état de la loterie"""
+    try:
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        
+        result = loop.run_until_complete(solana_service.sync_lottery_state())
+        loop.close()
+        
+        if result:
+            logger.info("Lottery state synchronized successfully")
+            return {'success': True, 'data': result}
+        else:
+            logger.error("Failed to sync lottery state")
+            return {'success': False}
+            
+    except Exception as e:
+        logger.error(f"Error syncing lottery state: {e}")
+        return {'success': False, 'error': str(e)}
+
+@shared_task
+def sync_participant_holdings():
+    """Synchronise les détentions de participants"""
+    try:
+        # Récupérer les participants actifs
+        active_participants = TokenHolding.objects.filter(
+            is_eligible=True
+        ).values_list('wallet_address', flat=True)[:100]  # Limiter pour éviter la surcharge
+        
+        return bulk_sync_wallets.delay(list(active_participants))
+        
+    except Exception as e:
+        logger.error(f"Error triggering participant sync: {e}")
+        return {'success': False, 'error': str(e)}

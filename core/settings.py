@@ -59,6 +59,8 @@ THIRD_PARTY_APPS = [
     'drf_yasg',
     'corsheaders',
     'django_filters',
+    'django_celery_results',
+    
 ]
 
 LOCAL_APPS = [
@@ -154,13 +156,13 @@ AUTH_PASSWORD_VALIDATORS = [
 # ============================================================================
 # INTERNATIONALIZATION
 # ============================================================================
-
 LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
+
+TIME_ZONE = 'America/New_York'
 USE_I18N = True
 USE_TZ = True
 
-# ============================================================================
+
 # STATIC FILES CONFIGURATION
 # ============================================================================
 
@@ -255,12 +257,12 @@ SIMPLE_JWT = {
 # ============================================================================
 # CORS CONFIGURATION
 # ============================================================================
-
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "http://localhost:8000",
     "http://127.0.0.1:8000",
+    "https://powerball.asitechsolution.com",  # 🔥 Domaine ajouté pour la prod
 ]
 
 CORS_ALLOW_CREDENTIALS = True
@@ -329,9 +331,8 @@ CACHE_TTL = {
 # ============================================================================
 # CELERY CONFIGURATION
 # ============================================================================
-
-CELERY_BROKER_URL = os.getenv('CELERY_BROKER_URL', 'redis://localhost:6379/0')
-CELERY_RESULT_BACKEND = os.getenv('CELERY_RESULT_BACKEND', 'redis://localhost:6379/0')
+CELERY_BROKER_URL = 'django-db'
+CELERY_RESULT_BACKEND = 'django-db'
 
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
@@ -372,11 +373,11 @@ SOLANA_PROGRAM_ID = os.getenv('SOLANA_PROGRAM_ID', '2wqFWNXDYT2Q71ToNFBqKpV4scKS
 SOLANA_COMMITMENT = os.getenv('SOLANA_COMMITMENT', 'confirmed')
 
 # Admin Keys
-SOLANA_ADMIN_PUBLIC_KEY = os.getenv('SOLANA_ADMIN_PUBLIC_KEY', 'Gb2uoQRXeM2qci4hcdYzAJMRsV3ZVcHbgPFBKKfWGcvh')
-SOLANA_ADMIN_PRIVATE_KEY = os.getenv('SOLANA_ADMIN_PRIVATE_KEY', '[147,92,74,221,141,7,103,12,176,228,185,250,61,104,229,96,183,237,177,70,45,199,45,206,121,59,186,81,118,38,17,227,231,151,54,32,220,74,149,189,138,33,229,132,180,175,238,82,43,156,198,213,137,217,152,0,150,141,180,57,59,53,196,126]')
+SOLANA_ADMIN_PUBLIC_KEY = os.getenv('SOLANA_ADMIN_PUBLIC_KEY', '2CSmvU5PVMpQ2B4RPSWhYgrmNAsVtiiaxQhERHWHUnBC')
+SOLANA_ADMIN_PRIVATE_KEY = os.getenv('SOLANA_ADMIN_PRIVATE_KEY', '[126,22,24,159,87,113,211,58,127,27,44,86,232,214,211,165,115,168,193,115,116,46,11,215,9,25,73,106,132,165,131,45,223,77,209,89,87,22,196,70,196,222,197,81,53,243,28,63,234,70,137,82,169,123,98,247,128,57,169,228,101,48,66,58]')
 
 # Token Configuration
-BALL_TOKEN_MINT = os.getenv('BALL_TOKEN_MINT', 'H7V3zqZV2L5z368uJb1J34796ZmU234tZj29B1j8Q4Q')
+BALL_TOKEN_MINT = os.getenv('BALL_TOKEN_MINT', '7gRCovtjCRPPHRdz22BTZX2WrjJSe9CgMxxfDshjemx9')
 
 # ============================================================================
 # LOTTERY CONFIGURATION

@@ -64,9 +64,12 @@ class TokenHoldingSerializer(serializers.ModelSerializer):
     def get_balance_formatted(self, obj):
         """Balance formatée avec des séparateurs"""
         return f"{obj.balance:,.2f}"
-
+    
 class WinnerSerializer(serializers.ModelSerializer):
+     
+     
     """Serializer pour les gagnants"""
+    lottery_id = serializers.IntegerField(source='lottery.id', read_only=True)  # ✅ Ajout explicite
     lottery_type = serializers.CharField(source='lottery.lottery_type', read_only=True)
     lottery_date = serializers.DateTimeField(source='lottery.executed_time', read_only=True)
     wallet_short = serializers.SerializerMethodField()
@@ -75,13 +78,13 @@ class WinnerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Winner
         fields = [
-            'id', 'wallet_address', 'wallet_short', 'winning_amount_sol',
+            'id', 'lottery_id', 'wallet_address', 'wallet_short', 'winning_amount_sol',  # ✅ lottery_id au lieu de lottery
             'winning_amount_formatted', 'winning_amount_usd', 'tickets_held',
             'payout_status', 'payout_time', 'payout_transaction_signature',
             'lottery_type', 'lottery_date', 'created_at'
         ]
         read_only_fields = [
-            'wallet_short', 'winning_amount_formatted', 'lottery_type', 'lottery_date'
+            'lottery_id', 'wallet_short', 'winning_amount_formatted', 'lottery_type', 'lottery_date'
         ]
     
     def get_wallet_short(self, obj):
@@ -91,6 +94,7 @@ class WinnerSerializer(serializers.ModelSerializer):
     def get_winning_amount_formatted(self, obj):
         """Montant formaté"""
         return f"{obj.winning_amount_sol:,.6f} SOL"
+
 
 class LotteryListSerializer(serializers.ModelSerializer):
     """Serializer pour la liste des tirages"""
@@ -340,3 +344,45 @@ class AuditLogSerializer(serializers.ModelSerializer):
         read_only_fields = [
             'user_display', 'lottery_display', 'timestamp'
         ]
+        
+        
+class LotterySerializer(serializers.ModelSerializer):
+    """Serializer pour les loteries"""
+    jackpot_amount_usd = serializers.SerializerMethodField()
+    time_until_draw = serializers.SerializerMethodField()
+    winner_details = serializers.SerializerMethodField()
+    
+    class Meta:
+        model = Lottery
+        fields = [
+            'id', 'lottery_type', 'scheduled_time', 'executed_time',
+            'status', 'jackpot_amount_sol', 'jackpot_amount_usd',
+            'total_participants', 'total_tickets', 'winner_wallet',
+            'random_seed', 'transaction_signature', 'time_until_draw',
+            'winner_details', 'created_at'
+        ]
+    
+    def get_jackpot_amount_usd(self, obj):
+        """Montant du jackpot en USD"""
+        return float(obj.jackpot_amount_sol) * 100
+    
+    def get_time_until_draw(self, obj):
+        """Temps restant avant le tirage"""
+        if obj.status == 'pending' and obj.scheduled_time:
+            from django.utils import timezone
+            remaining = obj.scheduled_time - timezone.now()
+            if remaining.total_seconds() > 0:
+                return int(remaining.total_seconds())
+        return 0
+    
+    def get_winner_details(self, obj):
+        """Détails du gagnant"""
+        winner = obj.winner_set.first()
+        if winner:
+            return {
+                'wallet_address': winner.wallet_address,
+                'tickets_held': winner.tickets_held,
+                'payout_status': winner.payout_status,
+                'payout_time': winner.payout_time
+            }
+        return None        
