@@ -1,6 +1,7 @@
 import django
 import os
 import sys
+import django
 from pathlib import Path
 
 # Configuration Django
