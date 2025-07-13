@@ -263,6 +263,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
     "http://127.0.0.1:8000",
     "https://powerball.asitechsolution.com",  # 🔥 Domaine ajouté pour la prod
+    "https://david-git-main-emmanuel-agbotoedos-projects.vercel.app",
+
 ]
 
 CORS_ALLOW_CREDENTIALS = True
